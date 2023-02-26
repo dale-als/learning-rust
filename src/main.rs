@@ -1,5 +1,12 @@
-fn main() {
-    let pi = 3.14159;
+mod garden;
+mod restaraunt;
 
-    println!("{:.2}", pi)
+use crate::garden::vegetables::Asparagus;
+
+
+
+fn main() {
+    let plant = Asparagus {};
+    println!("I'm growing {:?}!", plant);
+    println!("{}", restaraunt::eat_at_restaraunt());
 }
