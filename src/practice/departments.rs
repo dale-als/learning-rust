@@ -1,11 +1,13 @@
 use std::collections::HashMap;
-use std::{io, vec};
+use std::io;
 
 fn main() {
     let accounting_name = "Accounting";
     let sales_name = "Sales";
     let mut accounting = vec![String::from("Alice"), String::from("Bob")];
+    // let mut accounting = vec!["Alice", "Bob"];
     let mut sales = vec![String::from("Ben"), String::from("John")];
+    // let mut sales = vec!["Ben", "John"];
     let mut departments = HashMap::new();
     let possible_commands = ["Add", "List"];
 
