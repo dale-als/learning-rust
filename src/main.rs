@@ -8,7 +8,6 @@ fn main() {
     let mut sales = vec!["John", "Rick"];
     let mut departments = HashMap::new();
     let possible_commands = ["Add", "List"];
-
     // possible_commands.insert("Add", add);
     // possible_commands.insert("List", list);
 
@@ -40,29 +39,35 @@ fn main() {
                 println!("Enter target department and person separated by whitespace");
                 println!("Accounting John");
 
-                let mut add_input = String::new();
+                loop {
+                    let mut add_input = String::from("");
 
-                io::stdin()
-                    .read_line(&mut add_input)
-                    .expect("Failed to read line");
+                    io::stdin()
+                        .read_line(&mut add_input)
+                        .expect("Failed to read line");
 
-                let mut add_input = add_input.trim()[..].split_whitespace();
+                    let add_vec: Vec<&str> = add_input.trim()[..].split_whitespace().collect();
 
-                match add_input.next() {
-                    Some(target) => {
-                        let department = departments.get_mut(target);
+                    println!("{}", add_input.len());
 
-                        match department {
-                            Some(dep_ref) => match add_input.next() {
-                                Some(person) => {
-                                    dep_ref.push(person);
-                                },
-                                None => (),
-                            },
-                            None => (),
-                        }
+                    if add_input.len() < 2 {
+                        println!("Incorrect input, try again");
+                        continue;
                     }
-                    None => (),
+
+                    let target = add_vec[0];
+                    let person = add_vec[1];
+
+                    let department = departments.get_mut(target);
+
+                    match department {
+                        Some(dep_ref) => {
+                            println!("Adding {person} to {target}");
+                            let clone = person;
+                            dep_ref.push(clone);
+                        },
+                        None => (),
+                    }
                 }
             }
             "List" => {
