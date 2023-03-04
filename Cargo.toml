@@ -7,3 +7,8 @@ edition = "2021"
 
 [dependencies]
 rand = "0.8.5"
+
+# causes program to instantly stop after panic, without cleaning the memory (OS will)
+# try to do that
+# [profile.release]
+# panic = 'abort'
