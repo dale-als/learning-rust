@@ -6,9 +6,13 @@
 // so test coverage of the integrated code is important as well.
 // To create integration tests, you first need a tests directory.
 
-// use adder;
+// !! Integration tests in separate tesrs directory only works with library package (lib.rs)
+// include your library with use %library_name% where library name is from Cargo.toml
 
-// #[test]
-// fn it_adds_two() {
-//     assert_eq!(4, adder::add_two(2));
-// }
+use learning_project;
+
+#[test]
+fn integration_test_add_two() {
+    learning_project::add_two(2);
+    assert_eq!(4, learning_project::add_two(2));
+}

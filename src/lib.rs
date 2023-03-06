@@ -47,8 +47,6 @@ fn call_my_name(name: &str) -> String {
 // in the separate inner module tests with #[cfg(test)]
 #[cfg(test)] // mod test will only be compiled while cargo test and ignored while cargo build
 mod tests {
-    mod integration_test;
-
     use super::*; // tests is an inner module
                   // making outer module (main.rs) available here
 
