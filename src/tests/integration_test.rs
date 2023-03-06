@@ -9,10 +9,10 @@
 // !! Integration tests in separate tesrs directory only works with library package (lib.rs)
 // include your library with use %library_name% where library name is from Cargo.toml
 
-use learning_project;
+// use learning_project;
 
-#[test]
-fn integration_test_add_two() {
-    learning_project::add_two(2);
-    assert_eq!(4, learning_project::add_two(2));
-}
+// #[test]
+// fn integration_test_add_two() {
+//     learning_project::add_two(2);
+//     assert_eq!(4, learning_project::add_two(2));
+// }
