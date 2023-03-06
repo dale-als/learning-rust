@@ -46,10 +46,10 @@ impl<T, Z> PointTwo<T, Z> {
     // look for example below
     // generic parameters T2 and Z2 are declared after fn mixup,
     // because they’re only relevant to the method.
-    fn mixup<T2, Z2>(self, other: PointTwo<T2, Z2>) -> PointTwo <T, Z2> {
+    fn mixup<T2, Z2>(self, other: PointTwo<T2, Z2>) -> PointTwo<T, Z2> {
         PointTwo {
             x: self.x,
-            y: other.y
+            y: other.y,
         }
     }
 }
@@ -79,14 +79,13 @@ fn main() {
     // let wont_work = Point { x: 5.5, y: 10 };
     let will_work = PointTwo { x: 5, y: 10.5 };
 
-
     let have_f64_impl = PointTwo { x: 3.0, y: 2.0 };
 
     println!("{}", have_f64_impl.sum());
     // println!("{}", will_work.sum()) -- method .sum() wont work
 
     let p1 = PointTwo { x: 5, y: 10.4 };
-    let p2 = PointTwo { x: "Hello", y: 'c'};
+    let p2 = PointTwo { x: "Hello", y: 'c' };
 
     let p3 = p1.mixup(p2);
 
