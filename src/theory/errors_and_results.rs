@@ -61,7 +61,7 @@ fn read_username_from_file() -> Result<String, Error> {
 
 // ? symbol after Result works almost as match
 // if Result Ok - value inside assigned to let
-// if Result Error - errir inside immediately returned from the function
+// if Result Error - error inside immediately returned from the function
 // ? implicitly convert any error type to Error (defined in fn return signature)
 fn propagate_with_shortcut() -> Result<String, Error> {
     let mut username_file = File::open("hello.txt")?;
